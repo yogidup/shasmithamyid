@@ -146,7 +146,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white cute-top-gradient">
-      <div className="max-w-4xl mx-auto px-6 py-24 flex flex-col items-center">
+      <div className="max-w-6xl mx-auto px-6 py-24 flex flex-col items-center">
         
         {/* Profile Section */}
         <div className="relative mb-10">
@@ -181,22 +181,59 @@ export default function Home() {
 
           {/* Workflow Section */}
           <section id="about" className="w-full pt-16 scroll-mt-24">
-            <div className="text-center mb-12">
-               <h2 className="text-3xl font-extrabold text-slate-900 mb-3 text-gradient-blue-green">The Content Strategy</h2>
-               <p className="text-slate-500 font-medium">How I turn ideas into high-ranking articles.</p>
+            <div className="text-center mb-16">
+               <h2 className="text-4xl font-black text-slate-900 mb-4 text-gradient-blue-green">The Content Strategy</h2>
+               <p className="text-slate-500 font-medium max-w-xl mx-auto">
+                 My data-driven approach to creating content that doesn&apos;t just look good, but actually ranks and converts.
+               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
               {[
-                { title: 'Research', desc: 'Analyzing search intent & keyword difficulty.', color: 'from-sky-500 to-sky-400' },
-                { title: 'Structuring', desc: 'Crafting SEO-friendly outlines that flow.', color: 'from-sky-600 to-emerald-500' },
-                { title: 'Optimization', desc: 'Final polish for readability & ranking.', color: 'from-emerald-500 to-emerald-400' }
+                { 
+                  title: 'Deep Research', 
+                  desc: 'Analyzing search intent, keyword difficulty, and competitor gaps to find the most profitable opportunities for your brand.', 
+                  color: 'from-sky-500 to-sky-400' 
+                },
+                { 
+                  title: 'Topical Authority', 
+                  desc: 'Building a content map that covers all aspects of a topic, signaling to Google that your site is a trusted expert in your niche.', 
+                  color: 'from-blue-500 to-indigo-500' 
+                },
+                { 
+                  title: 'Strategic Writing', 
+                  desc: 'Crafting engaging, human-centric copy that satisfies both complex search engine algorithms and the curiosity of your readers.', 
+                  color: 'from-emerald-500 to-emerald-400' 
+                }
               ].map((step, i) => (
-                <div key={i} className="bg-white border border-slate-100 p-8 rounded-3xl shadow-soft hover:border-sky-100 transition-colors group">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${step.color} text-white rounded-2xl flex items-center justify-center font-black text-xl mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
+                <div key={i} className="bg-white border border-slate-100 p-8 rounded-[2.5rem] shadow-soft hover:border-sky-100 transition-all group">
+                  <div className={`w-14 h-14 bg-gradient-to-br ${step.color} text-white rounded-2xl flex items-center justify-center font-black text-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
                     {i + 1}
                   </div>
-                  <h3 className="font-bold text-xl text-slate-800 mb-2">{step.title}</h3>
+                  <h3 className="font-bold text-xl text-slate-800 mb-3">{step.title}</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {[
+                { 
+                  title: 'Technical Optimization', 
+                  desc: 'Fine-tuning H-tags, LSI keywords, and meta-data while ensuring every image and link contributes to a perfect On-Page SEO score.', 
+                  color: 'from-teal-500 to-emerald-500' 
+                },
+                { 
+                  title: 'Performance Tracking', 
+                  desc: 'Monitoring rankings and user behavior post-publish, then performing data-backed updates to maintain and improve search positions over time.', 
+                  color: 'from-sky-600 to-blue-500' 
+                }
+              ].map((step, i) => (
+                <div key={i+3} className="bg-white border border-slate-100 p-8 rounded-[2.5rem] shadow-soft hover:border-sky-100 transition-all group">
+                  <div className={`w-14 h-14 bg-gradient-to-br ${step.color} text-white rounded-2xl flex items-center justify-center font-black text-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
+                    {i + 4}
+                  </div>
+                  <h3 className="font-bold text-xl text-slate-800 mb-3">{step.title}</h3>
                   <p className="text-sm text-slate-500 leading-relaxed">{step.desc}</p>
                 </div>
               ))}

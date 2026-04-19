@@ -1,8 +1,9 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #ffffff;
-  --foreground: #1a1a1a;
+  --foreground: #1e293b; /* Slate 800 - lebih adem daripada hitam pekat */
   --accent-blue: #0ea5e9; /* Sky 500 */
   --accent-green: #10b981; /* Emerald 500 */
   --surface-border: #f1f5f9;
@@ -11,7 +12,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #ffffff;
-    --foreground: #1a1a1a;
+    --foreground: #1e293b;
   }
 }
 
@@ -45,4 +46,20 @@ body {
 
 .shadow-accent {
   box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.15);
+}
+
+/* Custom Typography Overrides agar menyatu dengan tema */
+.prose {
+  --tw-prose-body: #475569; /* Slate 600 */
+  --tw-prose-headings: #0f172a; /* Slate 900 */
+  --tw-prose-links: #0ea5e9; /* Sky 500 */
+  --tw-prose-bold: #0f172a;
+  --tw-prose-quotes: #0f172a;
+  --tw-prose-quote-borders: #10b981; /* Emerald 500 */
+  --tw-prose-captions: #64748b;
+  --tw-prose-code: #0f172a;
+  --tw-prose-pre-code: #f8fafc;
+  --tw-prose-pre-bg: #0f172a;
+  --tw-prose-th-borders: #cbd5e1;
+  --tw-prose-td-borders: #e2e8f0;
 }
