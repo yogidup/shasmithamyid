@@ -4,7 +4,7 @@
   --background: #ffffff;
   --foreground: #1a1a1a;
   --accent-blue: #0ea5e9; /* Sky 500 */
-  --accent-orange: #f97316; /* Orange 500 */
+  --accent-green: #10b981; /* Emerald 500 */
   --surface-border: #f1f5f9;
 }
 
@@ -22,29 +22,27 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Gradasi "Lucu" di Top Background */
+/* Gradasi Top Background Adem */
 .cute-top-gradient {
   background: 
-    radial-gradient(circle at 20% -10%, rgba(14, 165, 233, 0.08), transparent 40%),
-    radial-gradient(circle at 80% -10%, rgba(249, 115, 22, 0.08), transparent 40%);
+    radial-gradient(circle at 10% -5%, rgba(14, 165, 233, 0.05), transparent 30%),
+    radial-gradient(circle at 30% -5%, rgba(16, 185, 129, 0.04), transparent 40%);
 }
 
-.text-gradient-blue-orange {
-  @apply bg-gradient-to-r from-sky-500 to-orange-500 bg-clip-text text-transparent;
+.text-gradient-blue-green {
+  background: linear-gradient(45deg, #0ea5e9, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.bg-gradient-blue-orange {
-  @apply bg-gradient-to-r from-sky-500 to-orange-500;
-}
-
-.border-gradient-blue-orange {
-  border-image: linear-gradient(to right, #0ea5e9, #f97316) 1;
+.bg-gradient-blue-green {
+  background: linear-gradient(45deg, #0ea5e9, #10b981);
 }
 
 .shadow-soft {
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
 }
 
 .shadow-accent {
-  box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.2);
+  box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.15);
 }

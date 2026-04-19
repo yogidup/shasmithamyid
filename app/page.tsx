@@ -71,7 +71,7 @@ function PortfolioCard({ item }: { item: PortfolioItem }) {
       <div className="flex flex-col md:flex-row justify-between items-start gap-6">
         <div className="flex-1">
           <div className="flex items-center gap-3 mb-3">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-white bg-gradient-to-r from-sky-500 to-sky-400 px-3 py-1 rounded-full shadow-sm">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-white bg-gradient-blue-green px-3 py-1 rounded-full shadow-sm">
               {item.site}
             </span>
           </div>
@@ -90,7 +90,7 @@ function PortfolioCard({ item }: { item: PortfolioItem }) {
           )}
           <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="text-sm font-bold px-5 py-2 rounded-full bg-slate-50 text-sky-600 hover:bg-sky-50 transition-all flex items-center gap-2"
+            className={`text-sm font-bold px-5 py-2 rounded-full transition-all flex items-center gap-2 ${isOpen ? 'bg-sky-50 text-sky-600' : 'bg-slate-50 text-slate-600 hover:bg-sky-50 hover:text-sky-600'}`}
           >
             {isOpen ? 'Close' : 'Breakdown'} 
             <svg className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
@@ -99,7 +99,7 @@ function PortfolioCard({ item }: { item: PortfolioItem }) {
       </div>
 
       {isOpen && (
-        <div className="mt-8 p-8 bg-slate-50/50 rounded-2xl border border-slate-100 grid grid-cols-1 md:grid-cols-2 gap-8 animate-in fade-in zoom-in-95 duration-300">
+        <div className="mt-8 p-8 bg-sky-50/30 rounded-2xl border border-sky-100/50 grid grid-cols-1 md:grid-cols-2 gap-8 animate-in fade-in zoom-in-95 duration-300">
           <div>
             <h4 className="text-[11px] font-bold uppercase tracking-widest text-sky-600 mb-3">SEO Keywords</h4>
             <div className="space-y-3">
@@ -112,24 +112,24 @@ function PortfolioCard({ item }: { item: PortfolioItem }) {
             </div>
           </div>
           <div>
-            <h4 className="text-[11px] font-bold uppercase tracking-widest text-orange-600 mb-3">Tech Stack & Tools</h4>
+            <h4 className="text-[11px] font-bold uppercase tracking-widest text-emerald-600 mb-3">Tech Stack & Tools</h4>
             <div className="flex flex-wrap gap-2">
               {item.breakdown.tools.map(tool => (
-                <span key={tool} className="text-sm font-semibold text-slate-600 bg-orange-50 px-3 py-1.5 rounded-lg border border-orange-100/50">{tool}</span>
+                <span key={tool} className="text-sm font-semibold text-slate-600 bg-white px-3 py-1.5 rounded-lg border border-emerald-100">{tool}</span>
               ))}
             </div>
           </div>
-          <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 border-t border-slate-100">
+          <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-sky-100/50">
             <div>
-              <h4 className="text-[11px] font-bold uppercase tracking-widest text-emerald-600 mb-3">Verified Results</h4>
-              <p className="text-sm text-slate-600 leading-relaxed font-medium italic bg-emerald-50/50 p-4 rounded-xl border border-emerald-100">"{item.breakdown.results}"</p>
+              <h4 className="text-[11px] font-bold uppercase tracking-widest text-sky-500 mb-3">Verified Results</h4>
+              <p className="text-sm text-slate-600 leading-relaxed font-medium italic bg-white p-4 rounded-xl border border-sky-100/50">"{item.breakdown.results}"</p>
             </div>
             <div>
               <h4 className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-3">Research Sources</h4>
               <div className="flex flex-wrap gap-x-6 gap-y-2">
                 {item.breakdown.sources.map(source => (
                   <span key={source} className="text-xs text-slate-500 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-300" /> {source}
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> {source}
                   </span>
                 ))}
               </div>
@@ -150,8 +150,8 @@ export default function Home() {
         
         {/* Profile Section */}
         <div className="relative mb-10">
-          <div className="absolute inset-0 bg-gradient-to-tr from-sky-400 to-orange-400 rounded-full blur-2xl opacity-20 animate-pulse" />
-          <div className="relative w-40 h-40 rounded-full border-[6px] border-white shadow-2xl overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-sky-400 to-emerald-300 rounded-full blur-2xl opacity-10 animate-pulse" />
+          <div className="relative w-40 h-40 rounded-full border-[6px] border-white shadow-2xl overflow-hidden ring-1 ring-sky-100">
             <Image 
               src="/images/mitha.png"
               alt="Mitha"
@@ -163,7 +163,7 @@ export default function Home() {
         </div>
 
         <h1 className="text-5xl font-black text-slate-900 tracking-tight mb-4">
-          Hi, I&apos;m <span className="text-gradient-blue-orange">Mitha</span>
+          Hi, I&apos;m <span className="text-gradient-blue-green">Mitha</span>
         </h1>
         <p className="text-xl text-slate-500 font-medium leading-relaxed mb-10 max-w-lg text-center">
           I craft SEO content that helps brands rank higher and connect better with their audience.
@@ -172,8 +172,8 @@ export default function Home() {
         <div className="flex flex-col items-center gap-20 w-full">
           {/* Find Out More Button */}
           <a href="#about" className="group relative">
-            <div className="absolute inset-0 bg-gradient-blue-orange rounded-full blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
-            <div className="relative bg-gradient-blue-orange text-white px-10 py-4 rounded-full font-bold flex items-center gap-3 shadow-accent hover:scale-105 active:scale-95 transition-all">
+            <div className="absolute inset-0 bg-gradient-blue-green rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
+            <div className="relative bg-gradient-blue-green text-white px-10 py-4 rounded-full font-bold flex items-center gap-3 shadow-accent hover:scale-105 active:scale-95 transition-all">
               Find Out More
               <svg className="w-5 h-5 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
             </div>
@@ -182,18 +182,18 @@ export default function Home() {
           {/* Workflow Section */}
           <section id="about" className="w-full pt-16 scroll-mt-24">
             <div className="text-center mb-12">
-               <h2 className="text-3xl font-extrabold text-slate-900 mb-3">The Content Strategy</h2>
+               <h2 className="text-3xl font-extrabold text-slate-900 mb-3 text-gradient-blue-green">The Content Strategy</h2>
                <p className="text-slate-500 font-medium">How I turn ideas into high-ranking articles.</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { title: 'Research', desc: 'Analyzing search intent & keyword difficulty.', color: 'from-sky-500 to-sky-400' },
-                { title: 'Structuring', desc: 'Crafting SEO-friendly outlines that flow.', color: 'from-blue-500 to-indigo-500' },
-                { title: 'Optimization', desc: 'Final polish for readability & ranking.', color: 'from-orange-500 to-amber-500' }
+                { title: 'Structuring', desc: 'Crafting SEO-friendly outlines that flow.', color: 'from-sky-600 to-emerald-500' },
+                { title: 'Optimization', desc: 'Final polish for readability & ranking.', color: 'from-emerald-500 to-emerald-400' }
               ].map((step, i) => (
-                <div key={i} className="bg-white border border-slate-100 p-8 rounded-3xl shadow-soft hover:border-sky-100 transition-colors">
-                  <div className={`w-12 h-12 bg-gradient-to-tr ${step.color} text-white rounded-2xl flex items-center justify-center font-black text-xl mb-6 shadow-lg`}>
+                <div key={i} className="bg-white border border-slate-100 p-8 rounded-3xl shadow-soft hover:border-sky-100 transition-colors group">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${step.color} text-white rounded-2xl flex items-center justify-center font-black text-xl mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
                     {i + 1}
                   </div>
                   <h3 className="font-bold text-xl text-slate-800 mb-2">{step.title}</h3>
@@ -214,7 +214,7 @@ export default function Home() {
               </button>
               <button 
                 onClick={() => setActiveCategory('copy')}
-                className={`px-8 py-3 rounded-xl text-sm font-bold tracking-wide transition-all ${activeCategory === 'copy' ? 'bg-white text-orange-600 shadow-sm' : 'text-slate-400 hover:text-slate-600'}`}
+                className={`px-8 py-3 rounded-xl text-sm font-bold tracking-wide transition-all ${activeCategory === 'copy' ? 'bg-white text-sky-600 shadow-sm' : 'text-slate-400 hover:text-slate-600'}`}
               >
                 Copywriting
               </button>
@@ -232,10 +232,10 @@ export default function Home() {
           {/* Contact Section */}
           <footer className="w-full pt-32 pb-16 text-center">
              <div className="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-sky-500/20 blur-[100px]" />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-500/20 blur-[100px]" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-sky-500/10 blur-[100px]" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 blur-[100px]" />
                 
-                <h3 className="text-3xl md:text-5xl font-black mb-6 relative z-10">Let&apos;s build something <span className="text-sky-400">great</span> together.</h3>
+                <h3 className="text-3xl md:text-5xl font-black mb-6 relative z-10">Let&apos;s build something <span className="text-gradient-blue-green" style={{webkitTextFillColor: 'initial'}}>- great</span> together.</h3>
                 <p className="text-slate-400 mb-10 text-lg relative z-10">Ready to boost your organic growth?</p>
                 
                 <Link href="mailto:your@email.com" className="relative z-10 inline-flex items-center gap-3 bg-white text-slate-900 px-10 py-4 rounded-full font-bold hover:scale-105 transition-transform">
