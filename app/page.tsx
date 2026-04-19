@@ -235,7 +235,7 @@ export default function Home() {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-sky-500/10 blur-[100px]" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 blur-[100px]" />
                 
-                <h3 className="text-3xl md:text-5xl font-black mb-6 relative z-10">Let&apos;s build something <span className="text-gradient-blue-green" style={{webkitTextFillColor: 'initial'}}>- great</span> together.</h3>
+                <h3 className="text-3xl md:text-5xl font-black mb-6 relative z-10">Let&apos;s build something <span className="text-gradient-blue-green" style={{ WebkitTextFillColor: 'initial' }}>- great</span> together.</h3>
                 <p className="text-slate-400 mb-10 text-lg relative z-10">Ready to boost your organic growth?</p>
                 
                 <Link href="mailto:your@email.com" className="relative z-10 inline-flex items-center gap-3 bg-white text-slate-900 px-10 py-4 rounded-full font-bold hover:scale-105 transition-transform">
