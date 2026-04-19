@@ -16,7 +16,7 @@ export default function Navbar() {
                 <path d="M17.5 5.5a7 7 0 0 0-11 0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             </div>
-            <span>Beacon</span>
+            <span>Portfolio</span>
           </Link>
 
           <div className="flex items-center gap-1">
@@ -26,20 +26,6 @@ export default function Navbar() {
             >
               Blog
             </Link>
-            <Link
-              href="/pricing"
-              className="text-sm px-3 py-1.5 rounded-md text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800/50 transition-all"
-            >
-              Pricing
-            </Link>
-            <a
-              href="https://github.com/vercel/examples/tree/main/cdn/api-proxy-rewrite"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm px-3 py-1.5 rounded-md text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800/50 transition-all"
-            >
-              GitHub
-            </a>
           </div>
         </div>
       </div>
